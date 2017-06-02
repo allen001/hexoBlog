@@ -5,6 +5,7 @@ tags:
 - Java
 - ClassLoader
 - JVM
+- 随笔
 ---
 
 ## 什么是CLassLoader

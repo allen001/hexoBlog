@@ -6,10 +6,10 @@ menu:
 
 # SubNav
 subnav:
-  github: "#"
-  weibo: "#"
+  github: "https://github.com/allen001"
+  weibo: "http://weibo.com/0allen"
   rss: "#"
-  zhihu: "#"
+  zhihu: "https://www.zhihu.com/people/meng-fan-zhi-61"
   #qq: "#"
   #weixin: "#"
   #jianshu: "#"
@@ -49,9 +49,9 @@ reward_type: 2
 # 打赏wording
 reward_wording: '谢谢你请我吃糖果'
 # 支付宝二维码图片地址，跟你设置头像的方式一样。比如：/assets/img/alipay.jpg
-alipay: 
+alipay: /image/alipay.jpg
 # 微信二维码图片地址
-weixin: 
+weixin: /image/weixin.png
 
 # Miscellaneous
 baidu_analytics: ''
@@ -71,7 +71,7 @@ share_jia: true
 duoshuo: false
 
 #2、网易云跟帖
-wangyiyun: true
+wangyiyun: '1149f906e0de486294d65cce65351437'
 
 #3、畅言
 changyan_appid: false
@@ -103,11 +103,6 @@ smart_menu:
   aboutme: '关于我'
 
 friends:
-  友情链接1: http://localhost:4000/
-  友情链接2: http://localhost:4000/
-  友情链接3: http://localhost:4000/
-  友情链接4: http://localhost:4000/
-  友情链接5: http://localhost:4000/
-  友情链接6: http://localhost:4000/
+  友情链接QQ 2462307235: '#'
 
-aboutme: 很惭愧<br><br>只做了一点微小的工作<br>谢谢大家
+aboutme: 'Java小学生，一直在学习，从未停止过'
