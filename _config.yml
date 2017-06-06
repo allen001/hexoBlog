@@ -5,14 +5,16 @@
 # Site
 title: 肆意挥洒の青春 心已远
 subtitle: Java小学生
-description: java
+description: 北京工业大学12级，现就职于互联网金融保险公司，一直做Java研究开发，此为博客一枚
 author: Allen
 language: zh-CN
+email: omengfanzhio@163.com
+keywords: "前端,js,jquery,java,javascript,html5,开发者,程序猿,程序媛,极客,编程,代码,开源,IT网站,Developer,Programmer,Coder,Geek,html,css,css3,用户体验"
 timezone:
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: http://yoursite.com
+url: http://mengfz.tk
 root: /
 permalink: :year/:month/:day/:title/
 permalink_defaults:

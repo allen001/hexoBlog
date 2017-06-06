@@ -106,6 +106,9 @@ public class NewworkClassLoaderTest {
 #### 4.ClassLoader的体系架构
 ![体系架构](http://static.codeceo.com/images/2015/03/7c47cc427c8e826ebea320219ce81394.png)
 ***
+
+<!-- more -->
+
 **验证ClassLoader加载类的原理**
 
 **测试1**：打印ClassLoader类的层次结构，请看下面这段代码：
