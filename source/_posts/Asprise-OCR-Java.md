@@ -9,20 +9,20 @@ tags:
 Asprise OCR Java 二维码，条形码识别。
 
  - 添加Asprise OCR Maven / Gradle依赖
-```
+```java
 <dependency>
     <groupId>com.asprise.ocr</groupId>
     <artifactId>java-ocr-api</artifactId>
     <version>[15,)</version>
 </dependency>
 ```
-```
+```java
 compile group: 'com.asprise.ocr', name: 'java-ocr-api', version: '[15,)'
 ```
 
  - 基本语法
 
-```
+```java
 import com.asprise.ocr.Ocr
 ...
 
