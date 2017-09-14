@@ -100,11 +100,11 @@ public class NewworkClassLoaderTest {
 首先获得网络上一个class文件的二进制名称，然后通过自定义的类加载器`NetworkClassLoader`创建两个实例，并根据网络地址分别加载这份class，并得到这两个ClassLoader实例加载后生成的Class实例clazz1和clazz2，最后将这两个Class实例分别生成具体的实例对象obj1和obj2，再通过反射调用clazz1中的`setNetClassLoaderSimple`方法。
 #### 3. 查看测试结果
 
-![测试结果](http://static.codeceo.com/images/2015/03/40f5888b67c748df7efba008e7c2f9d2.jpg)
+![测试结果](/image/java-classloader/40f5888b67c748df7efba008e7c2f9d2.jpg)
 
 **结论：从结果中可以看出，虽然是同一份class字节码文件，但是由于被两个不同的ClassLoader实例所加载，所以JVM认为它们就是两个不同的类。**
 #### 4.ClassLoader的体系架构
-![体系架构](http://static.codeceo.com/images/2015/03/7c47cc427c8e826ebea320219ce81394.png)
+![体系架构](/image/java-classloader/7c47cc427c8e826ebea320219ce81394.png)
 ***
 
 <!-- more -->
@@ -123,7 +123,7 @@ System.out.println(loader);
 ```
 **打印结果：** 
 
-![打印结果](http://static.codeceo.com/images/2015/03/771409a8fb1543788fe7d91f1ea0987f.jpg)
+![打印结果](/image/java-classloader/771409a8fb1543788fe7d91f1ea0987f.jpg)
 
 > 第一行结果说明：ClassLoaderTest的类加载器是`AppClassLoader`。
 
@@ -133,11 +133,11 @@ System.out.println(loader);
 
 **测试2**：将ClassLoaderTest.class打包成`ClassLoaderTest.jar`，放到`Extension ClassLoader`的加载目录下（`JAVA_HOME/jre/lib/ext`），然后重新运行这个程序，得到的结果会是什么样呢？
 
-![测试2](http://static.codeceo.com/images/2015/03/1a1f289428bd7ab3beb8a89d4c90b22f.jpg)
+![测试2](/image/java-classloader/1a1f289428bd7ab3beb8a89d4c90b22f.jpg)
 
 **打印结果**：
 
-![打印结果](http://static.codeceo.com/images/2015/03/eb4fe264c10eb7a528b047aa983a4829.jpg)
+![打印结果](/image/java-classloader/eb4fe264c10eb7a528b047aa983a4829.jpg)
 
 **打印结果分析**
 > 为什么第一行的结果是ExtClassLoader呢？
@@ -156,7 +156,7 @@ System.out.println(loader);
 
 打开Run配置对话框：
 
-![配置对话框](http://static.codeceo.com/images/2015/03/cb67c3ae286e9140355eb56d2c33ff5b.jpg)
+![配置对话框](/image/java-classloader/cb67c3ae286e9140355eb56d2c33ff5b.jpg)
 
 配置好如图中所述的参数后，重新运行程序，产的结果如下所示：（类加载的过程，只摘下了一部份）
 
@@ -205,11 +205,11 @@ C:\Program Files\Java\jdk1.6.0_22\jre\classes;c:\ClassLoaderTest.jar
 
 **提示：** jre目录下默认没有classes目录，需要自己手动创建一个
 
-![提示](http://static.codeceo.com/images/2015/03/63d9b90d9808e4ddc24c2331ddd6775d.jpg)
+![提示](/image/java-classloader/63d9b90d9808e4ddc24c2331ddd6775d.jpg)
 
 **打印结果**
 
-![打印结果](http://static.codeceo.com/images/2015/03/deb77b7fcd6ee6af0b2c992355eaeea9.jpg)
+![打印结果](/image/java-classloader/deb77b7fcd6ee6af0b2c992355eaeea9.jpg)
 
 从结果中可以看出，两种方式都实现了将`ClassLoaderTest.class`由`Bootstrcp ClassLoader`加载成功了。
 
@@ -227,7 +227,7 @@ C:\Program Files\Java\jdk1.6.0_22\jre\classes;c:\ClassLoaderTest.jar
 
 因为JDK已经在`loadClass`方法中帮我们实现了ClassLoader搜索类的算法，当在loadClass方法中搜索不到类时，loadClass方法就会调用findClass方法来搜索类，所以我们只需重写该方法即可。如没有特殊的要求，一般不建议重写loadClass搜索类的算法。下图是API中ClassLoader的loadClass方法：
 
-![图](http://static.codeceo.com/images/2015/03/ca7724498403de38829ae36fc9149b75.jpg)
+![图](/image/java-classloader/ca7724498403de38829ae36fc9149b75.jpg)
 
 **示例：自定义一个NetworkClassLoader，用于加载网络上的class文件**
 
@@ -326,11 +326,11 @@ public class ClassLoaderTest {
 
 **打印结果：**
 
-![](http://static.codeceo.com/images/2015/03/bfd92386a1b48076792e68b596846499.jpg)
+![](/image/java-classloader/bfd92386a1b48076792e68b596846499.jpg)
 
 下图是我机器上web服务器的目录结构：
 
-![](http://static.codeceo.com/images/2015/03/bdc2d12f90867717d1bbc5bc01bb614f.jpg)
+![](/image/java-classloader/bdc2d12f90867717d1bbc5bc01bb614f.jpg)
 
 目前常用web服务器中都定义了自己的类加载器，用于加载web应用指定目录下的类库（jar或class），如：Weblogic、Jboss、tomcat等，下面我以Tomcat为例，展示该web容器都定义了哪些个类加载器：
 
@@ -399,6 +399,6 @@ http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
 
 + 访问Servlet，获得显示结果
 
-![](http://static.codeceo.com/images/2015/03/e1aaef260db7f48558149ce9b0c2c3d8.jpg)
+![](/image/java-classloader/e1aaef260db7f48558149ce9b0c2c3d8.jpg)
 
 原文出处：http://www.codeceo.com/article/java-classloader.html
