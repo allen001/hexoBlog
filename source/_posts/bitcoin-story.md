@@ -1,7 +1,9 @@
 ---
-toc:true
+layout: post
 title: 区块链：一个故事告诉你比特币的原理及运作机制
 date: 2018-01-12 16:05:21
+toc: true
+comments: true
 tags:
 - 区块链
 - 比特币
