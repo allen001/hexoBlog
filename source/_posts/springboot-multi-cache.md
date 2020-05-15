@@ -1,10 +1,12 @@
 ---
 title: Springboot多缓存配置处理
 date: 2017-08-21 16:01:48
+comments: true
 tags:
 - springboot
 - spring
 - springmvc
+- 随笔
 ---
 
 * 下面我们已Ehcache,Redis缓存配置为例讲解。
@@ -35,7 +37,10 @@ public class EhCacheConfig {
     }
 }
 ```
+<!-- more -->
+
 ### 2. Redis缓存配置
+
 ```java
 @Configuration
 @EnableCaching

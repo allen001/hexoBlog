@@ -1,16 +1,18 @@
 ---
 title: Java ClassLoader 分析整理
 date: 2016-05-19 17:18:43
+comments: true
 tags: 
 - Java
 - ClassLoader
 - JVM
-- 随笔
 ---
 
 ## 什么是CLassLoader
 
 大家都知道，当我们写好一个Java程序之后，不是管是CS还是BS应用，都是由若干个.class文件组织而成的一个完整的Java应用程序，当程序在运行时，即会调用该程序的一个入口函数来调用系统的相关功能，而这些功能都被封装在不同的class文件当中，所以经常要从这个class文件中要调用另外一个class文件中的方法，如果另外一个文件不存在的，则会引发系统异常。而程序在启动的时候，并不会一次性加载程序所要用的所有class文件，而是根据程序的需要，通过Java的类加载机制（ClassLoader）来动态加载某个class文件到内存当中的，从而只有class文件被载入到了内存之后，才能被其它class所引用。所以ClassLoader就是用来动态加载class文件到内存当中用的。
+
+<!-- more -->
 
 ## Java 默认提供三个ClassLoader
 
@@ -105,9 +107,6 @@ public class NewworkClassLoaderTest {
 **结论：从结果中可以看出，虽然是同一份class字节码文件，但是由于被两个不同的ClassLoader实例所加载，所以JVM认为它们就是两个不同的类。**
 #### 4.ClassLoader的体系架构
 ![体系架构](/image/java-classloader/7c47cc427c8e826ebea320219ce81394.png)
-***
-
-<!-- more -->
 
 **验证ClassLoader加载类的原理**
 

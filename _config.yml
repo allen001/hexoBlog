@@ -9,12 +9,12 @@ description: 北京工业大学12级，现就职于互联网金融保险公司�
 author: Allen
 language: zh-CN
 email: omengfanzhio@163.com
-keywords: "前端,js,jquery,java,javascript,html5,开发者,程序猿,程序媛,极客,编程,代码,开源,IT网站,Developer,Programmer,Coder,Geek,html,css,css3,用户体验"
+keywords: "前端,js,java,javascript,html5,开发者,程序猿,程序媛,极客,编程,代码,开源,IT网站,分布式,集群,高可用,Developer,Programmer,Coder,Geek"
 timezone:
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: http://mengfz.tk
+url: http://blog.mathjia.net
 root: /
 permalink: :year/:month/:day/:title/
 permalink_defaults:

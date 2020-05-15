@@ -1,15 +1,16 @@
 <div id="gitment-ctn"></div> 
-<link rel="stylesheet" href="//imsun.github.io/gitment/style/default.css">
-<script src="//imsun.github.io/gitment/dist/gitment.browser.js"></script>
+<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+<script src="/js/md5.js"></script>
 <script>
-var gitment = new Gitment({
-  id: "<%=url%>",
-  owner: '<%=theme.gitment_owner%>',
+var gitalk = new Gitalk({
+  id: md5(location.pathname),
+  clientID: '<%=theme.gitment_oauth.client_id%>',
+  clientSecret: '<%=theme.gitment_oauth.client_secret%>',
   repo: '<%=theme.gitment_repo%>',
-  oauth: {
-    client_id: '<%=theme.gitment_oauth.client_id%>',
-    client_secret: '<%=theme.gitment_oauth.client_secret%>',
-  },
+  owner: '<%=theme.gitment_owner%>',
+  admin: '<%=theme.gitment_owner%>'
 })
-gitment.render('gitment-ctn')
+
+gitalk.render('gitment-ctn')
 </script>

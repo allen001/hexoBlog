@@ -1,12 +1,11 @@
 ---
 title: Java并发编程：并发容器之ConcurrentHashMap
 date: 2017-06-05 17:53:06
+comments: true
 tags:
 - java
 - 并发
 - ConcurrentHashMap
-- 随笔
-
 ---
 
 JDK5中添加了新的concurrent包，相对同步容器而言，并发容器通过一些机制改进了并发性能。因为同步容器将所有对容器状态的访问都串行化了，这样保证了线程的安全性，所以这种方法的代价就是严重降低了并发性，当多个线程竞争容器时，吞吐量严重降低。因此Java5.0开始针对多线程并发访问设计，提供了并发性能较好的并发容器，引入了java.util.concurrent包。
@@ -29,6 +28,8 @@ CopyOnWriteArrayList和CopyOnWriteArraySet分别代替List和Set，主要是在�
 大家都知道HashMap是非线程安全的，Hashtable是线程安全的，但是由于Hashtable是采用synchronized进行同步，相当于所有线程进行读写时都去竞争一把锁，导致效率非常低下。
 
 ConcurrentHashMap可以做到读取数据不加锁，并且其内部的结构可以让其在进行写操作的时候能够将锁的粒度保持地尽量地小，不用对整个ConcurrentHashMap加锁。
+
+<!-- more -->
 
 ## 1. ConcurrentHashMap的内部结构
 ConcurrentHashMap为了提高本身的并发能力，在内部采用了一个叫做Segment的结构，一个Segment其实就是一个类Hash Table的结构，Segment内部维护了一个链表数组，我们用下面这一幅图来看下ConcurrentHashMap的内部结构：
@@ -67,8 +68,6 @@ static final class HashEntry<K,V> {
 }
 ```
 可以看到HashEntry的一个特点，除了value以外，其他的几个变量都是final的，这样做是为了防止链表结构被破坏，出现ConcurrentModification的情况。
-
-<!-- more -->
 
 ## 4. ConcurrentHashMap的初始化
 下面我们来结合源代码来具体分析一下ConcurrentHashMap的实现，先看下初始化方法：

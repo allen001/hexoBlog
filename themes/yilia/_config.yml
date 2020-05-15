@@ -3,6 +3,7 @@
 menu:
   主页: /
   随笔: /tags/随笔/
+  归档: /archives
 
 # SubNav
 subnav:
@@ -63,7 +64,7 @@ toc_empty_wording: '目录，不存在的…'
 top: true
 
 # Miscellaneous
-baidu_analytics: ''
+baidu_analytics: 'c6b01e22834ebdc0da49129a771764a4'
 google_analytics: ''
 favicon: /favicon.png
 
@@ -94,8 +95,8 @@ disqus: false
 gitment_owner: 'allen001'      #你的 GitHub ID
 gitment_repo: 'allen001.github.io'         #存储评论的 repo
 gitment_oauth:
-  client_id: '080a2bdfca9ab9e6e4d9'           #client ID
-  client_secret: 'af9c3f80184daf383e75e0085402b150f27164a6'       #client secret
+  client_id: '2360b29b462f37a66d43'           #client ID
+  client_secret: '02475a757ede4af430aaa33eeef99c652d4ab1da'       #client secret
 
 # 样式定制 - 一般不需要修改，除非有很强的定制欲望…
 style:
@@ -120,6 +121,7 @@ smart_menu:
   aboutme: '关于我'
 
 friends:
-  友情链接QQ 2462307235: '#'
+  CSDN: 'https://www.csdn.net'
+  掘金: 'https://juejin.im'
 
 aboutme: 'Java小学生，一直在学习，从未停止过'

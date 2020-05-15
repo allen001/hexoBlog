@@ -1,6 +1,7 @@
 ---
 title: Asprise OCR Java 二维码，条形码识别
 date: 2017-06-29 17:02:42
+comments: true
 tags:
 - OCR
 - Java

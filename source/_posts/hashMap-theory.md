@@ -1,15 +1,20 @@
 ---
 title: HashMap原理解读
 date: 2017-06-09 18:25:25
+comments: true
 tags:
 - java
 - hashMap
-
 ---
 ## 1.什么是HashMap
 > **基于哈希表的 Map 接口的实现**。此实现提供所有可选的映射操作，**并允许使用 null 值和 null 键**。（除了非同步和允许使用 null 之外，HashMap 类与 Hashtable 大致相同。）**此类不保证映射的顺序，特别是它不保证该顺序恒久不变**。 此实现假定哈希函数将元素适当地分布在各桶之间，可为基本操作（get 和 put）提供稳定的性能。迭代 collection 视图所需的时间与 HashMap 实例的“容量”（桶的数量）及其大小（键-值映射关系数）成比例。所以，如果迭代性能很重要，则不要将初始容量设置得太高（或将加载因子设置得太低）。
-    
+
+
+
+<!-- more -->
+
 ## 2.HashMap和HashTable的区别
+
 > 1. **HashTable的方法是同步的**，在方法的前面都有synchronized来同步，**HashMap未经同步**，所以在多线程场合要手动同步。
 > 2. **HashTable不允许null值**(key和value都不可以) ,**HashMap允许null值**(key和value都可以)。
 > 3. HashTable有一个contains(Object value)功能和containsValue(Object value)功能一样。
@@ -47,10 +52,10 @@ public HashSet() {
 
 > 关于这部分内容建议自己去翻翻源码，`ConcurrentHashMap`
  也是一种线程安全的集合类，他和`HashTable`也是有区别的，主要区别就是加锁的粒度以及如何加锁，`ConcurrentHashMap` 的加锁粒度要比`HashTable`更细一点。将数据分成一段一段的存储，然后给每一段数据配一把锁，当一个线程占用锁访问其中一个段数据的时候，其他段的数据也能被其他线程访问。
- 
+
 
 <!--more-->
- 
+
 ## 5. HashMap实现原理分析
 `HashMap的数据结构` 数据结构中有`数组`和`链表`来实现对数据的存储，但这两者基本上是两个极端。
 > **数组**:数组必须事先定义固定的长度（元素个数），不能适应数据动态地增减的情况。当数据增加时，可能超出原先定义的元素个数；当数据减少时，造成内存浪费。
@@ -58,13 +63,13 @@ public HashSet() {
     >> 数组利用下标定位，时间复杂度为O(1)
     >> 数组插入或删除元素的时间复杂度O(n)
     >> 数组的特点是：寻址容易，插入和删除困难；
-    
+
 > **链表**:链表存储区间离散，占用内存比较宽松。
     >> 链表是动态分配内存，并不连续。
     >> 链表定位元素时间复杂度O(n)
     >> 链表插入或删除元素的时间复杂度O(1)
     >> 链表的特点是：寻址困难，插入和删除容易。
-    
+
 **哈希表**
 > 那么我们能不能综合两者的特性，做出一种寻址容易，插入删除也容易的数据结构？答案是肯定的，这就是我们要提起的哈希表。`哈希表（(Hash table）`既满足了数据的查找方便，同时不占用太多的内容空间，使用也十分方便。
 
@@ -88,7 +93,7 @@ return Entry[index];
 ```
 
  - put
- 
+
 疑问：如果两个key通过hash%Entry[].length得到的index相同，会不会有覆盖的危险？
 
 这里HashMap里面用到链式数据结构的一个概念。上面我们提到过Entry类里面有一个next属性，作用是指向下一个Entry。
@@ -253,4 +258,4 @@ void transfer(Entry[] newTable) {
 }
 ```
 
-  [1]: http://www.hollischuang.com/wp-content/uploads/2016/03/image-1024x622.jpg
+[1]: http://www.hollischuang.com/wp-content/uploads/2016/03/image-1024x622.jpg
