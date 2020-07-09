@@ -322,7 +322,9 @@ github地址：https://github.com/allen001/es-search
 ## 资料
 
 * [ElasticSearch6.5.4<一> 单机部署以及简单尝试](https://blog.csdn.net/qq_25012687/article/details/98728578)
+
 * [ElasticSearch6.5.4<二> 几个重要概念以及常用搜索](https://blog.csdn.net/qq_25012687/article/details/100825774)
+
 * [ElasticSearch6.5.4<三> 中文以及拼音的操作](https://blog.csdn.net/qq_25012687/article/details/100851367)
 * [ElasticSearch6.5.4<四> Java使用ES并实战搜索](https://blog.csdn.net/qq_25012687/article/details/100877285)
 * [ElasticSearch6.5.4<五> 集群操作](https://blog.csdn.net/qq_25012687/article/details/100915731)
